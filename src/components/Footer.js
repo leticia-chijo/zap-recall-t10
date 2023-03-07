@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export default function Footer({ children }) {
     return (
-        <FooterConcluidos>
+        <FooterConcluidos data-test="footer">
             {children}
         </FooterConcluidos>
     )

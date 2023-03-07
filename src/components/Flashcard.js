@@ -31,33 +31,30 @@ export default function Flashcard({ index, card, increaseCounter, addAnswer }) {
     return (
         <>
             {!started ? (
-                <PerguntaFechada status={status}>
-                    <p>Pergunta {index + 1}</p>
+                <PerguntaFechada status={status} data-test="flashcard">
+                    <p data-test="flashcard-text">Pergunta {index + 1}</p>
                     <StatusIcon status={status} showQuestion={showQuestion} />
                 </PerguntaFechada>
             ) : (
-                <PerguntaAberta>
+                <PerguntaAberta data-test="flashcard">
                     {!turned ? (
                         <>
-                            {card.question}
+                            <p data-test="flashcard-text">{card.question}</p>
                             <img onClick={showAnswer} src={turnArrow} alt="Seta de virar o card" />
                         </>
                     ) : (
                         <>
-                            {card.answer}
+                            <p data-test="flashcard-text">{card.answer}</p>
                             <ContainerBotoes>
-                                <BotaoResposta background={VERMELHO} onClick={() => answerQuestion("wrong")}>Não Lembrei</BotaoResposta>
-                                <BotaoResposta background={AMARELO} onClick={() => answerQuestion("almost")}>Quase não Lembrei</BotaoResposta>
-                                <BotaoResposta background={VERDE} onClick={() => answerQuestion("correct")}>Zap!</BotaoResposta>
+                                <BotaoResposta background={VERMELHO} onClick={() => answerQuestion("wrong")} data-test="no-btn">Não Lembrei</BotaoResposta>
+                                <BotaoResposta background={AMARELO} onClick={() => answerQuestion("almost")} data-test="partial-btn">Quase não Lembrei</BotaoResposta>
+                                <BotaoResposta background={VERDE} onClick={() => answerQuestion("correct")} data-test="zap-btn">Zap!</BotaoResposta>
                             </ContainerBotoes>
                         </>
                     )}
                 </PerguntaAberta>
             )}
         </>
-
-
-
     )
 }
 

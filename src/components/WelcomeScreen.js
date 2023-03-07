@@ -6,7 +6,7 @@ export default function WelcomeScreen({goToDeckScreen}) {
         <ScreenContainer>
             <Logo src={logo}/>
             <Titulo>ZapRecall</Titulo>
-            <BotaoIniciar onClick={goToDeckScreen}>Iniciar Recall</BotaoIniciar>
+            <BotaoIniciar onClick={goToDeckScreen} data-test="start-btn">Iniciar Recall</BotaoIniciar>
         </ScreenContainer>
     )
 }

@@ -41,14 +41,14 @@ export default function DeckScreen() {
             <Footer totalQuestions={deckReact.length} questionsCounter={counter}>
                 {counter === deckReact.length && (
                     answers.includes("wrong") ? (
-                        <Finalizacao>
+                        <Finalizacao data-test="finish-text">
                             <img src={sad} alt="Emoji triste" />
                             <span>Putz...</span>
                             <p>Ainda faltam algumas... Mas não desanime!</p>
                         </Finalizacao>
 
                     ) : (
-                        <Finalizacao>
+                        <Finalizacao data-test="finish-text">
                             <img src={happy} alt="Emoji feliz" />
                             <span>Parabéns!</span>
                             <p>Você não esqueceu nenhum flashcard!</p>
