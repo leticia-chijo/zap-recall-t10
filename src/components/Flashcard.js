@@ -40,7 +40,7 @@ export default function Flashcard({ index, card, increaseCounter, addAnswer }) {
                     {!turned ? (
                         <>
                             <p data-test="flashcard-text">{card.question}</p>
-                            <img onClick={showAnswer} src={turnArrow} alt="Seta de virar o card" />
+                            <img onClick={showAnswer} src={turnArrow} alt="Seta de virar o card" data-test="turn-btn"/>
                         </>
                     ) : (
                         <>
